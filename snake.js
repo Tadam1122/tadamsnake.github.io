@@ -100,6 +100,7 @@ function draw() {
     ctx.fillStyle = "black";
     ctx.font = "45px Changa One";
     ctx.fillText("Game Over", 175, 175);
+    ctx.fillText("Press Button to Try Again", 25, 235);
     btn.appendChild(text);
     page.appendChild(btn);
     btn.style.textAlign = "center";
