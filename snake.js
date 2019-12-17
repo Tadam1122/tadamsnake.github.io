@@ -1,9 +1,15 @@
 const cvs = document.getElementById("snake");
 const ctx = cvs.getContext("2d");
+var page = document.getElementById("button-space");
+var btn = document.createElement("button");
+var text = document.createTextNode("Play Again");
+btn.appendChild(text);
 
 const box = 32;
 
-let snake = [];
+var game = setInterval(draw, 100);
+
+var snake = [];
 snake[0] = { x: 9 * box, y: 10 * box }; //snake starting pos
 
 let food = {
@@ -11,8 +17,8 @@ let food = {
   y: Math.floor(Math.random() * 15 + 3) * box
 };
 
-let score = 0;
-let d;
+var score = 0;
+var d;
 
 //control snake
 document.addEventListener("keydown", direction);
@@ -91,13 +97,31 @@ function draw() {
     collision(newHead, snake)
   ) {
     clearInterval(game);
+    ctx.fillStyle = "black";
+    ctx.font = "45px Changa One";
+    ctx.fillText("Game Over", 175, 175);
+    btn.appendChild(text);
+    page.appendChild(btn);
+    btn.style.textAlign = "center";
+    btn.onclick = beginGame;
   }
 
   snake.unshift(newHead);
-
   ctx.fillStyle = "white";
   ctx.font = "45px Changa One";
   ctx.fillText(score, 2 * box, 1.6 * box);
 }
+function beginGame() {
+  snake = [];
+  snake[0] = { x: 9 * box, y: 10 * box }; //snake starting pos
+  d = "";
+  page.removeChild(btn);
+  btn.removeChild(text);
 
-let game = setInterval(draw, 100);
+  let food = {
+    x: Math.floor(Math.random() * 17 + 1) * box,
+    y: Math.floor(Math.random() * 15 + 3) * box
+  };
+  score = 0;
+  game = setInterval(draw, 100);
+}
