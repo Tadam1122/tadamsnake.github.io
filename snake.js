@@ -48,8 +48,13 @@ function collision(head, array) {
 
 //draw to canvas
 function draw() {
-  ctx.fillStyle = "#8faeb9";
+  ctx.fillStyle = "#949392";
   ctx.fillRect(0, 0, cvs.getAttribute("width"), cvs.getAttribute("height"));
+  ctx.fillStyle = "#8faeb9";
+  var height = cvs.getAttribute("height") - box;
+  var width = cvs.getAttribute("width") - box;
+  console.log(width);
+  ctx.fillRect(box, box, 545, 545);
   for (let i = 0; i < snake.length; i++) {
     ctx.fillStyle = i == 0 ? "#2dcaff" : "#7f7f7f";
     ctx.fillRect(snake[i].x, snake[i].y, box, box);
@@ -98,9 +103,9 @@ function draw() {
   ) {
     clearInterval(game);
     ctx.fillStyle = "black";
-    ctx.font = "45px Changa One";
-    ctx.fillText("Game Over", 175, 175);
-    ctx.fillText("Press Button to Try Again", 25, 235);
+    ctx.font = "40px Arial";
+    ctx.fillText("Game Over", 200, 175);
+    ctx.fillText("Press Button to Try Again", 75, 235);
     btn.appendChild(text);
     page.appendChild(btn);
     btn.style.textAlign = "center";
@@ -108,9 +113,9 @@ function draw() {
   }
 
   snake.unshift(newHead);
-  ctx.fillStyle = "white";
-  ctx.font = "45px Changa One";
-  ctx.fillText(score, 2 * box, 1.6 * box);
+  ctx.fillStyle = "Black";
+  ctx.font = "35px Arial";
+  ctx.fillText(score, 1.5 * box, 0.9 * box);
 }
 function beginGame() {
   snake = [];
