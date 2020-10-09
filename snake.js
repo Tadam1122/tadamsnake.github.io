@@ -109,7 +109,7 @@ function draw() {
 
   snake.unshift(newHead)
   ctx.fillStyle = 'white'
-  ctx.font = '35px system-ui'
+  ctx.font = '26px system-ui'
   ctx.fillText(score, 1.5 * box, 0.9 * box)
 }
 function beginGame() {
