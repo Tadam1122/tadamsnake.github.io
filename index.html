@@ -3,20 +3,24 @@
   <head>
     <title>Snake Game</title>
     <link rel="stylesheet" href="style.css" />
+    <!-- CSS only -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css"
+      integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
-    <div>
+    <div class="game">
       <canvas id="snake" width="608" height="608"></canvas>
     </div>
-    <section class="directions">
-      <span style="text-align:center;" id="button-space"></span>
-      <h2>Controls</h2>
-      <p>
-        Use the arrow keys to begin the game and move the snake. Survive as long
-        as you can without eating your tail or hitting the wall. How many points
-        can you get?
-      </p>
-    </section>
+    <div id="btnContainer" class="container"></div>
+    <div class="container card">
+      <span style="text-align: center" id="button-space"></span>
+      <h2 class="card-title">Controls</h2>
+      <p class="card-body">Use the arrow keys to begin the game and move the snake. Survive as long as you can without eating your tail or hitting the wall. How many points can you get?</p>
+    </div>
     <script src="snake.js"></script>
   </body>
 </html>

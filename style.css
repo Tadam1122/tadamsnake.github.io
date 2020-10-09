@@ -1,12 +1,15 @@
-div {
+.game {
   width: 100%;
-  padding: 70px 0;
-  padding-bottom: 0;
+  /* padding: 70px 0; */
+  /* padding-bottom: 2rem; */
   text-align: center;
 }
+div {
+  padding: 1rem;
+}
+
 canvas {
   display: inline;
-  border-radius: 10%;
 }
 .directions {
   text-align: justify;
